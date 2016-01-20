@@ -17,3 +17,15 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
   * Docs: http://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
+
+# Tips
+
+## How to create users
+
+    $ iex -S mix
+
+    iex(1)> alias Rumbl.Repo
+    iex(2)> alias Rumbl.User
+    iex(3)> Repo.insert(%User{name: "Jose", username: "josevalim", password_hash: "<3<3elixir"})
+    iex(4)> Repo.insert(%User{name: "Bruce", username: "redrapids", password_hash: "7langs"})
+    iex(5)> Repo.insert(%User{name: "Chris", username: "chrismccord", password_hash: "phx"})
