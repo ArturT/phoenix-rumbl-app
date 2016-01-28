@@ -22,6 +22,7 @@ defmodule Rumbl.Router do
     # thanks to that we will not catch new as :id in show action
     resources "/users", UserController, only: [:index, :new, :show, :create]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
+    resources "/videos", VideoController
   end
 
   # Other scopes may use custom stacks.
