@@ -8,9 +8,10 @@ defmodule Rumbl.TestHelpers do
       password: "supersecret"
     }, attrs)
 
-    %Rumbl.User{}
-    |> Rumbl.User.registration_changeset(changes)
-    |> Repo.insert()
+    {:ok, user} = %Rumbl.User{}
+                  |> Rumbl.User.registration_changeset(changes)
+                  |> Repo.insert()
+    user
   end
 
   def insert_video(user, attrs \\ %{}) do
