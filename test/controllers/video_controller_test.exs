@@ -15,4 +15,23 @@ defmodule Rumbl.VideoControllerTest do
       assert conn.halted
     end)
   end
+
+  setup do
+    user = insert_user(username: "max")
+    conn = assign(conn(), :current_user, user)
+    {:ok, conn: conn, user: user}
+  end
+
+  test "lists all user's videos on index", %{conn: conn, user: user} do
+    user_video = insert_video(user, title: "funny cats")
+
+    user_other = insert_user(username: "other")
+    other_video = insert_video(user_other, title: "another video")
+
+    conn = get conn, video_path(conn, :index)
+
+    assert html_response(conn, 200) =~ ~r/Listing videos/
+    assert String.contains?(conn.resp_body, user_video.title)
+    refute String.contains?(conn.resp_body, other_video.title)
+  end
 end
