@@ -9,7 +9,7 @@ dependencies:
     - if ! asdf | grep version; then git clone https://github.com/HashNuke/asdf.git ~/.asdf; fi
     - asdf plugin-add erlang https://github.com/HashNuke/asdf-erlang.git
     - asdf plugin-add elixir https://github.com/HashNuke/asdf-elixir.git
-    - erlang_version=18 && asdf install erlang ${erlang_version}
+    - erlang_version=18.2.1 && asdf install erlang ${erlang_version}
     - elixir_version=1.2.1 && asdf install elixir ${elixir_version}
     - yes | mix deps.get
 test:
