@@ -11,6 +11,7 @@ dependencies:
     - asdf plugin-add elixir https://github.com/HashNuke/asdf-elixir.git
     - erlang_version=18.2.1 && asdf install erlang ${erlang_version}
     - elixir_version=1.2.1 && asdf install elixir ${elixir_version}
+    - mix local.hex
     - yes | mix deps.get
 test:
   override:
