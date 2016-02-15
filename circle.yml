@@ -1,6 +1,6 @@
 dependencies:
   pre:
-    - script/ci/prepare.sh
+    - bin/ci/prepare.sh
   cache_directories:
     - ~/dependencies
     - ~/.mix
@@ -9,4 +9,4 @@ dependencies:
 
 test:
   override:
-    - script/ci/tests.sh
+    - bin/ci/tests.sh
