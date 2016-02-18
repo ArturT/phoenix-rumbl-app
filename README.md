@@ -29,3 +29,13 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
     iex(3)> Repo.insert(%User{name: "Jose", username: "josevalim", password_hash: "<3<3elixir"})
     iex(4)> Repo.insert(%User{name: "Bruce", username: "redrapids", password_hash: "7langs"})
     iex(5)> Repo.insert(%User{name: "Chris", username: "chrismccord", password_hash: "phx"})
+
+## Set up credentials
+
+    $ cp config/dev.secret.exs.example config/dev.secret.exs
+
+* Visit https://developer.wolframalpha.com/portal/signup.html
+* Sign-in and click the “Get an AppID” link
+* Enter your Application name and description, and submit the form
+* Copy the generated APPID after submitting the form
+* Add APPID to `config/dev.secret.exs`
