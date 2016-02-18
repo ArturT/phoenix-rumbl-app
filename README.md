@@ -39,3 +39,9 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
 * Enter your Application name and description, and submit the form
 * Copy the generated APPID after submitting the form
 * Add APPID to `config/dev.secret.exs`
+
+## Seeds
+
+Create wolfram bot user.
+
+    $ mix run priv/repo/backend_seeds.exs
