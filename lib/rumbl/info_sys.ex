@@ -60,6 +60,8 @@ defmodule Rumbl.InfoSys do
   end
 
   defp kill(pid, ref) do
+    # The [:flush] option guarantees the :DOWN message will be removed from our inbox
+    # in case it was delivered before we dropped the monitor.
     Process.demonitor(ref, [:flush])
     Process.exit(pid, :kill)
   end
